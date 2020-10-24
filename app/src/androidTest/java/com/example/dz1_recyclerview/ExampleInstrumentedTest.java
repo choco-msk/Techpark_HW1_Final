@@ -21,7 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
-        assertEquals("com.example.hw1_fragments_with_list", appContext.getPackageName());
+        assertEquals("com.example.dz1_recyclerview", appContext.getPackageName());
     }
 }
