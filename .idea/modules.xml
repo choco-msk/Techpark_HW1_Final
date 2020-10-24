@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DZ1_RecyclerView.iml" filepath="$PROJECT_DIR$/.idea/modules/DZ1_RecyclerView.iml" group="DZ1_RecyclerView" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="DZ1_RecyclerView/app" />
+    </modules>
+  </component>
+</project>

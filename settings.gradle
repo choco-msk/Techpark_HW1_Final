@@ -1,2 +1,2 @@
+rootProject.name='DZ1_RecyclerView'
 include ':app'
-rootProject.name = "DZ1_RecyclerView"
