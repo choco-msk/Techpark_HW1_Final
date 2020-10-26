@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,18 +30,18 @@ public class FragmentClose extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        String text = "No";
+        String text = "";
         Bundle arguments = getArguments();
         if (arguments != null) {
             text = arguments.getString(DIGIT_KEY);
-        }
+        } else Log.wtf("MyApp", "Exception. Arguments = null");
         TextView digit = ((TextView)view.findViewById(R.id.digit));
         digit.setText(text);
 
         assert text != null;
         int num = Integer.parseInt(text);
-        if (num % 2 == 0) digit.setTextColor(Color.RED);
-        else digit.setTextColor(Color.BLUE);
+        if (num % 2 == 0) digit.setTextColor(getResources().getColor(R.color.RedItem));
+        else digit.setTextColor(getResources().getColor(R.color.BlueItem));
 
 
     }

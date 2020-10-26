@@ -10,12 +10,12 @@
         android:id="@+id/btnAdd"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/button_size"
         android:text="@string/add_element" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000"/>
+        android:background="@color/MainListColor"/>
 </LinearLayout>

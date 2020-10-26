@@ -17,19 +17,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.dz1_recyclerview.R;
-
 import java.util.ArrayList;
 
 
 public class FragmentMain extends Fragment {
     private static final int INITIAL_ELEMENTS_COUNT = 100;
     private static final String ITEMLIST_KEY = "itemList";
-    private static final int VERTICAL_ORIENTATION_SPANCOUNT = 3;
-    private static final int HORIZONTAL_ORIENTATION_SPANCOUNT = 4;
 
     private ArrayList<Integer> itemList;
-    private Activity activity;
+    private ActivityAccess activity;
     private RecyclerView numbersList;
 
     @Override
@@ -60,8 +56,8 @@ public class FragmentMain extends Fragment {
         if (numbersList != null) {
             int spanCount;
             if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                spanCount = HORIZONTAL_ORIENTATION_SPANCOUNT;
-            } else spanCount = VERTICAL_ORIENTATION_SPANCOUNT;
+                spanCount = getResources().getInteger(R.integer.horizontal_orientation);
+            } else spanCount = getResources().getInteger(R.integer.vertical_orientation);
             numbersList.setAdapter(new mainListAdapter(itemList));
             numbersList.setLayoutManager(new GridLayoutManager(view.getContext(), spanCount, RecyclerView.VERTICAL, false));
         }
@@ -80,9 +76,15 @@ public class FragmentMain extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        if (context instanceof Activity) {
-            activity = (Activity)context;
+        if (context instanceof ActivityAccess) {
+            activity = (ActivityAccess)context;
         }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        activity = null;
     }
 
     class mainListAdapter extends RecyclerView.Adapter<mainListViewHolder> {
@@ -135,6 +137,7 @@ public class FragmentMain extends Fragment {
             digit = itemView.findViewById(R.id.digit);
         }
     }
+
 
 
 }

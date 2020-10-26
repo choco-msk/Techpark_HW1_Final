@@ -8,7 +8,6 @@ import android.os.Bundle;
 import com.example.dz1_recyclerview.R;
 
 public class MainActivity extends AppCompatActivity implements ActivityAccess {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
